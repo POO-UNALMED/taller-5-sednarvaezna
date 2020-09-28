@@ -15,13 +15,13 @@ public class Zoologico {
 	}
 	public int cantidadTotalAnimales() {
 		int total=0;
-		for (int i=0;i<zonas.length;i++) {
-			total = total + zonas[i].cantidadAnimales();
+		for (int i=0;i<zona.length;i++) {
+			total = total + zona[i].cantidadAnimales();
 		}
 		return total;
 	}
 	public void agregarZonas(Zona zona) {
-		this.zonas[this.zonas.length]=zona;
+		this.zona[this.zona.length]=zona;
 	}
 	
 	public String getNombre() {
@@ -37,14 +37,14 @@ public class Zoologico {
 		this.ubicacion = ubicacion;
 	}
 	public Zona[] getZona() {
-		return zonas;
+		return zona;
 	}
-	public void setZona(Zona[] zonas) {
-		this.zonas = zonas;
+	public void setZona(Zona[] zona) {
+		this.zona = zona;
 	}
 	public void agregarZonas(Zona[] zona) {
-		for (int i = 0, j = this.zonas.length; i<zona.length ;i++,j++) {
-			this.zonas[j] = zona[i];
+		for (int i = 0, j = this.zona.length; i<zona.length ;i++,j++) {
+			this.zona[j] = zona[i];
 		}
 	}
 }
