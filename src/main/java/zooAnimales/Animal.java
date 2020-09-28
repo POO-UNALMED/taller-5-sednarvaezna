@@ -62,8 +62,8 @@ public class Animal {
 		return("desplazarse");
 	}
 	public String toString() {
-		if (this.zona.length>0) {
-			return("Mi nombre es " + this.nombre+ ", tengo una edad de " + this.edad + ", habito en " +  this.habitat + " y mi genero es "+ this.genero + ", la zona en la que me ubico es " + this.zona[0].getNombre() + ", en el " + this.zona[0].getZoo()[0].getNombre());
+		if (this.zona) {
+			return("Mi nombre es " + this.nombre+ ", tengo una edad de " + this.edad + ", habito en " +  this.habitat + " y mi genero es "+ this.genero + ", la zona en la que me ubico es " + this.zona.getNombre() + ", en el " + this.zona.getZoo().getNombre());
 		}
 		else {
 			return("Mi nombre es " + this.nombre+ ", tengo una edad de " + this.edad + ", habito en " +  this.habitat + " y mi genero es "+ this.genero);
