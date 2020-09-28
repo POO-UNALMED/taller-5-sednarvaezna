@@ -69,5 +69,12 @@ public class Animal {
 			return("Mi nombre es " + this.nombre+ ", tengo una edad de " + this.edad + ", habito en " +  this.habitat + " y mi genero es "+ this.genero);
 		}
 	}
+	public String testTotalTipo() {
+		return ("Mamiferos: "+ Mamifero.listado.lenght+"\n" + 
+				"Aves: "+ Ave.listado.lenght +"\n" + 
+				"Reptiles: "+ Reptil.listado.lenght + "\n" + 
+				"Peces: "+ Pez.listado.lenght + "\n" + 
+				"Anfibios: "+ Anfibio.listado.lenght )
+	}
 	
 }
