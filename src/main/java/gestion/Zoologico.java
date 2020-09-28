@@ -21,7 +21,26 @@ public class Zoologico {
 		return total;
 	}
 	public void agregarZonas(Zona zona) {
-		this.zona[this.zona.length]=zona;
+		if (this.zona ==null) {
+			this.zona = new Zona[1];
+			this.zona[0]=zona;
+		}
+		else {
+			Zona[] oldZona = new Zona[this.zona.length];
+			for (int i=0;i<this.zona.length;i++) {
+				oldZona[i]=this.zona[i];
+			}
+			
+			this.zona = new Zona[this.zona.length + 1];
+					
+			for (int i=0;i<oldZona.length;i++) {
+				this.zona[i]=oldZona[i];
+			
+			this.zona[this.zona.length-1]=zona;
+			}
+		}
+		
+		
 	}
 	
 	public String getNombre() {
@@ -42,9 +61,5 @@ public class Zoologico {
 	public void setZona(Zona[] zona) {
 		this.zona = zona;
 	}
-	public void agregarZonas(Zona[] zona) {
-		for (int i = 0, j = this.zona.length; i<zona.length ;i++,j++) {
-			this.zona[j] = zona[i];
-		}
-	}
+
 }

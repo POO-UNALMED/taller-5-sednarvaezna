@@ -9,7 +9,7 @@ public class Pez extends Animal{
 	private int cantidadAletas;
 	
 	public Pez() {
-		Pez.listado[Pez.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 		
 	}
@@ -20,15 +20,32 @@ public class Pez extends Animal{
 		this.setGenero(genero);
 		this.setColorEscamas(colorEscamas);
 		this.setCantidadAletas(cantidadAletas);
-		Pez.listado[Pez.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	
 	public Pez[] getListado() {
 		return listado;
 	}
-	public void setListado(Pez[] listado) {
-		this.listado = listado;
+	public void setListado(Pez listado) {
+		if (Pez.listado ==null) {
+			Pez.listado = new Pez[1];
+			Pez.listado[0]=listado;
+		}
+		else {
+			Pez[] oldPez = new Pez[Pez.listado.length];
+			for (int i=0;i<Pez.listado.length;i++) {
+				oldPez[i]=Pez.listado[i];
+			}
+			
+			Pez.listado = new Pez[Pez.listado.length + 1];
+					
+			for (int i=0;i<oldPez.length;i++) {
+				Pez.listado[i]=oldPez[i];
+			
+				Pez.listado[Pez.listado.length-1]=listado;
+			}
+		}	
 	}
 	public String getColorEscamas() {
 		return colorEscamas;

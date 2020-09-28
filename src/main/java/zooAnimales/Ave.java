@@ -9,7 +9,7 @@ public class Ave extends Animal{
 	private String colorPlumas;
 	
 	public Ave() {
-		Ave.listado[Ave.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	
@@ -19,15 +19,32 @@ public class Ave extends Animal{
 		this.setHabitat(habitat);
 		this.setGenero(genero);
 		this.setColorPlumas(colorPlumas);
-		Ave.listado[Ave.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	
 	public Ave[] getListado() {
 		return listado;
 	}
-	public void setListado(Ave[] listado) {
-		this.listado = listado;
+	public void setListado(Ave listado) {
+		if (this.listado ==null) {
+			this.listado = new Ave[1];
+			this.listado[0]=listado;
+		}
+		else {
+			Ave[] oldAve = new Ave[this.listado.length];
+			for (int i=0;i<this.listado.length;i++) {
+				oldAve[i]=this.listado[i];
+			}
+			
+			this.listado = new Ave[this.listado.length + 1];
+					
+			for (int i=0;i<oldAve.length;i++) {
+				this.listado[i]=oldAve[i];
+			
+			this.listado[this.listado.length-1]=listado;
+			}
+		}
 	}
 	public String getColorPlumas() {
 		return colorPlumas;

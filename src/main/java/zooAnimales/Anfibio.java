@@ -8,7 +8,7 @@ public class Anfibio extends Animal {
 	private boolean venenoso;
 	
 	public Anfibio() {
-		Anfibio.listado[Anfibio.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	public Anfibio(String nombre,int edad,String habitat,String genero, String colorPiel,boolean venenoso) {
@@ -18,7 +18,7 @@ public class Anfibio extends Animal {
 		this.setHabitat(habitat);
 		this.setNombre(nombre);
 		this.setVenenoso(venenoso);
-		Anfibio.listado[Anfibio.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	
@@ -26,8 +26,25 @@ public class Anfibio extends Animal {
 	public Anfibio[] getListado() {
 		return listado;
 	}
-	public void setListado(Anfibio[] listado) {
-		this.listado = listado;
+	public void setListado(Anfibio listado) {
+		if (Anfibio.listado ==null) {
+			Anfibio.listado = new Anfibio[1];
+			Anfibio.listado[0]=listado;
+		}
+		else {
+			Anfibio[] oldAnfibio = new Anfibio[Anfibio.listado.length];
+			for (int i=0;i<Anfibio.listado.length;i++) {
+				oldAnfibio[i]=Anfibio.listado[i];
+			}
+			
+			Anfibio.listado = new Anfibio[Anfibio.listado.length + 1];
+					
+			for (int i=0;i<oldAnfibio.length;i++) {
+				Anfibio.listado[i]=oldAnfibio[i];
+			
+				Anfibio.listado[Anfibio.listado.length-1]=listado;
+			}
+		}
 	}
 	public String getColorPiel() {
 		return colorPiel;

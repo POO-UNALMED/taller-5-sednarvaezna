@@ -1,6 +1,5 @@
 package zooAnimales;
 
-import gestion.Zona;
 
 public class Reptil extends Animal{
 	public static Reptil[] listado;
@@ -10,7 +9,7 @@ public class Reptil extends Animal{
 	private int largoCola;
 	
 	public Reptil() {
-		Reptil.listado[Reptil.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	
@@ -21,15 +20,32 @@ public class Reptil extends Animal{
 		this.setColorEscamas(colorEscamas);
 		this.setLargoCola(largoCola);
 		this.setGenero(genero);
-		Reptil.listado[Reptil.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 
 	}
 	public Reptil[] getListado() {
 		return listado;
 	}
-	public void setListado(Reptil[] listado) {
-		this.listado = listado;
+	public void setListado(Reptil listado) {
+		if (Reptil.listado ==null) {
+			Reptil.listado = new Reptil[1];
+			Reptil.listado[0]=listado;
+		}
+		else {
+			Reptil[] oldReptil = new Reptil[Reptil.listado.length];
+			for (int i=0;i<Reptil.listado.length;i++) {
+				oldReptil[i]=Reptil.listado[i];
+			}
+			
+			Reptil.listado = new Reptil[Reptil.listado.length + 1];
+					
+			for (int i=0;i<oldReptil.length;i++) {
+				Reptil.listado[i]=oldReptil[i];
+			
+				Reptil.listado[Reptil.listado.length-1]=listado;
+			}
+		}	
 	}
 	public String getColorEscamas() {
 		return colorEscamas;

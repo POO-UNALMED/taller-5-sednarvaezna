@@ -1,7 +1,5 @@
 package zooAnimales;
 
-import gestion.Zona;
-
 public class Mamifero extends Animal{
 	public static Mamifero[] listado;
 	public static int caballos;
@@ -11,7 +9,7 @@ public class Mamifero extends Animal{
 	
 	
 	public Mamifero() {
-		this.listado[this.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 	}
 	
@@ -22,7 +20,7 @@ public class Mamifero extends Animal{
 		this.setGenero(genero);
 		this.setPelaje(pelaje);
 		this.setPatas(patas);
-		Mamifero.listado[Mamifero.listado.length] = this;
+		this.setListado(this);
 		this.setTotalAnimales(this.getTotalAnimales()+1);
 		
 	}
@@ -30,9 +28,25 @@ public class Mamifero extends Animal{
 	public Mamifero[] getListado() {
 		return listado;
 	}
-	public void setListado(Mamifero[] listado) {
-		this.listado = listado;
-	}
+	public void setListado(Mamifero listado) {
+		if (Mamifero.listado ==null) {
+			Mamifero.listado = new Mamifero[1];
+			Mamifero.listado[0]=listado;
+		}
+		else {
+			Mamifero[] oldMamifero = new Mamifero[Mamifero.listado.length];
+			for (int i=0;i<Mamifero.listado.length;i++) {
+				oldMamifero[i]=Mamifero.listado[i];
+			}
+			
+			Mamifero.listado = new Mamifero[Mamifero.listado.length + 1];
+					
+			for (int i=0;i<oldMamifero.length;i++) {
+				Mamifero.listado[i]=oldMamifero[i];
+			
+				Mamifero.listado[Mamifero.listado.length-1]=listado;
+			}
+		}	}
 	public boolean isPelaje() {
 		return pelaje;
 	}
