@@ -69,7 +69,7 @@ public class Animal {
 			return("Mi nombre es " + this.nombre+ ", tengo una edad de " + this.edad + ", habito en " +  this.habitat + " y mi genero es "+ this.genero);
 		}
 	}
-	public String totalPorTipo() {
+	public static String totalPorTipo() {
 		return ("Mamiferos: "+ Mamifero.listado.length+"\n" + 
 				"Aves: "+ Ave.listado.length +"\n" + 
 				"Reptiles: "+ Reptil.listado.length + "\n" + 
