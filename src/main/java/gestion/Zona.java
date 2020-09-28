@@ -4,14 +4,14 @@ import zooAnimales.Animal;
 
 public class Zona {
 	private String nombre;
-	private Zoologico[] zoo;
+	private Zoologico zoo;
 	private Animal[] animales;
 	
 	public Zona(){
 		
 	}
 	
-	public Zona(String nombre,Zoologico[] zoo) {
+	public Zona(String nombre,Zoologico zoo) {
 		this.setZoo(zoo);
 		this.nombre = nombre;
 	}
@@ -29,10 +29,10 @@ public class Zona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Zoologico[] getZoo() {
+	public Zoologico getZoo() {
 		return zoo;
 	}
-	public void setZoo(Zoologico[] zoo) {
+	public void setZoo(Zoologico zoo) {
 		this.zoo = zoo;
 	}
 	public Animal[] getAnimales() {

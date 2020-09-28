@@ -8,7 +8,7 @@ public class Animal {
 	private int edad;
 	private String habitat;
 	private String genero;
-	private Zona[] zona;
+	private Zona zona;
 	
 	public Animal() {
 		Animal.totalAnimales=+1;
@@ -52,10 +52,10 @@ public class Animal {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	public Zona[] getZona() {
+	public Zona getZona() {
 		return zona;
 	}
-	public void setZona(Zona[] zona) {
+	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
 	public String movimiento() {
