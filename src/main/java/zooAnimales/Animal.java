@@ -70,11 +70,11 @@ public class Animal {
 		}
 	}
 	public String testTotalTipo() {
-		return ("Mamiferos: "+ Mamifero.listado.lenght+"\n" + 
-				"Aves: "+ Ave.listado.lenght +"\n" + 
-				"Reptiles: "+ Reptil.listado.lenght + "\n" + 
-				"Peces: "+ Pez.listado.lenght + "\n" + 
-				"Anfibios: "+ Anfibio.listado.lenght );
+		return ("Mamiferos: "+ Mamifero.listado.length+"\n" + 
+				"Aves: "+ Ave.listado.length +"\n" + 
+				"Reptiles: "+ Reptil.listado.length + "\n" + 
+				"Peces: "+ Pez.listado.length + "\n" + 
+				"Anfibios: "+ Anfibio.listado.length );
 	}
 	
 }
