@@ -3,9 +3,9 @@ package zooAnimales;
 import gestion.Zona;
 
 public class Ave extends Animal{
-	private static Ave[] listado;
-	private static int halcones;
-	private static int aguilas;
+	public static Ave[] listado;
+	public static int halcones;
+	public static int aguilas;
 	private String colorPlumas;
 	
 	public Ave() {
@@ -36,13 +36,13 @@ public class Ave extends Animal{
 		this.colorPlumas = colorPlumas;
 	}
 	
-	public Ave crearHalcon(String nombre,int edad,String genero) {
+	public static Ave crearHalcon(String nombre,int edad,String genero) {
 		Ave.halcones=+1;
-		return(new Ave(nombre,edad,"montañas",genero, "cafe glorioso"));
+		return(new Ave(nombre,edad,"montanas",genero, "cafe glorioso"));
 	}
-	public Ave crearAguila(String nombre,int edad,String genero) {
+	public static Ave crearAguila(String nombre,int edad,String genero) {
 		Ave.aguilas=+1;
-		return(new Ave(nombre,edad,"montañas",genero, "blanco y amarillo"));
+		return(new Ave(nombre,edad,"montanas",genero, "blanco y amarillo"));
 	}
 	public int cantidadAves() {
 		return (Ave.aguilas + Ave.halcones);

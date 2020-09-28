@@ -2,9 +2,9 @@ package zooAnimales;
 
 
 public class Pez extends Animal{
-	private static Pez[] listado;
-	private static int salmones;
-	private static int bacalaos;
+	public static Pez[] listado;
+	public static int salmones;
+	public static int bacalaos;
 	private String colorEscamas;
 	private int cantidadAletas;
 	
@@ -43,12 +43,12 @@ public class Pez extends Animal{
 		this.cantidadAletas = cantidadAletas;
 	}
 	
-	public Pez crearBacalao(String nombre,int edad,String genero) {
+	public static  Pez crearBacalao(String nombre,int edad,String genero) {
 		
 		Pez.bacalaos=+1;
 		return(new Pez(nombre,edad,"oceano",genero, "gris",6));
 	}
-	public Pez crearSalmon(String nombre,int edad,String genero) {
+	public static Pez crearSalmon(String nombre,int edad,String genero) {
 		Pez.salmones=+1;
 		return(new Pez(nombre,edad,"oceano",genero, "rojo",6));
 	}

@@ -4,15 +4,14 @@ public class Zoologico {
 	
 	private String nombre;
 	private String ubicacion;
-	private Zona[] zonas;
+	private Zona[] zona;
 	
 	public Zoologico() {
 		
 	}
-	public Zoologico(String nombre,String ubicacion,Zona[] zonas) {
+	public Zoologico(String nombre,String ubicacion) {
 		this.nombre=nombre;
 		this.ubicacion=ubicacion;
-		this.setZonas(zonas);
 	}
 	public int cantidadTotalAnimales() {
 		int total=0;
@@ -37,10 +36,10 @@ public class Zoologico {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-	public Zona[] getZonas() {
+	public Zona[] getZona() {
 		return zonas;
 	}
-	public void setZonas(Zona[] zonas) {
+	public void setZona(Zona[] zonas) {
 		this.zonas = zonas;
 	}
 	public void agregarZonas(Zona[] zona) {

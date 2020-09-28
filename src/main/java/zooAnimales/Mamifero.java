@@ -3,9 +3,9 @@ package zooAnimales;
 import gestion.Zona;
 
 public class Mamifero extends Animal{
-	private static Mamifero[] listado;
-	private static int caballos;
-	private static int leones;
+	public static Mamifero[] listado;
+	public static int caballos;
+	public static int leones;
 	private boolean pelaje;
 	private int patas;
 	
@@ -45,11 +45,11 @@ public class Mamifero extends Animal{
 	public void setPatas(int patas) {
 		this.patas = patas;
 	}
-	public Mamifero crearLeon(String nombre,int edad,String genero) {
+	public static Mamifero crearLeon(String nombre,int edad,String genero) {
 		Mamifero.leones=+1;
 		return(new Mamifero(nombre,edad,"selva",genero, true,4));
 	}
-	public Mamifero crearCaballo(String nombre,int edad,String genero) {
+	public static Mamifero crearCaballo(String nombre,int edad,String genero) {
 		Mamifero.caballos=+1;
 		return(new Mamifero(nombre,edad,"pradera",genero, true,4));
 	}

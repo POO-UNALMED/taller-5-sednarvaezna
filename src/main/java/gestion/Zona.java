@@ -11,8 +11,7 @@ public class Zona {
 		
 	}
 	
-	public Zona(String nombre,Zoologico[] zoo, Animal[] animales) {
-		this.setAnimales(animales);
+	public Zona(String nombre,Zoologico[] zoo) {
 		this.setZoo(zoo);
 		this.nombre = nombre;
 	}

@@ -1,9 +1,9 @@
 package zooAnimales;
 
 public class Anfibio extends Animal {
-	private static Anfibio[] listado;
-	private static int ranas;
-	private static int salamandras;
+	public static Anfibio[] listado;
+	public static int ranas;
+	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
 	
@@ -41,11 +41,11 @@ public class Anfibio extends Animal {
 	public void setVenenoso(boolean venenoso) {
 		this.venenoso = venenoso;
 	}
-	public Anfibio crearSalamandra(String nombre,int edad,String genero) {
+	public static Anfibio crearSalamandra(String nombre,int edad,String genero) {
 		Anfibio.salamandras=+1;
 		return(new Anfibio(nombre,edad,"selva",genero, "negro y amarillo",false));
 	}
-	public Anfibio crearRana(String nombre,int edad,String genero) {
+	public static Anfibio crearRana(String nombre,int edad,String genero) {
 		
 		Anfibio.ranas=+1;
 		return(new Anfibio(nombre,edad,"selva",genero, "rojo",true));
