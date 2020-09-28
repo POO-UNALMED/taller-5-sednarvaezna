@@ -74,7 +74,7 @@ public class Animal {
 				"Aves: "+ Ave.listado.lenght +"\n" + 
 				"Reptiles: "+ Reptil.listado.lenght + "\n" + 
 				"Peces: "+ Pez.listado.lenght + "\n" + 
-				"Anfibios: "+ Anfibio.listado.lenght )
+				"Anfibios: "+ Anfibio.listado.lenght );
 	}
 	
 }
